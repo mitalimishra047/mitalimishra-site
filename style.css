@@ -300,3 +300,4 @@ h3 { font-size: 1.35rem; }
   .film { padding: 48px 0; }
   .film-grid { grid-template-columns: 1fr; gap: 28px; }
 }
+.film-links { display: flex; flex-wrap: wrap; gap: 24px; }
