@@ -180,7 +180,8 @@ h3 { font-size: 1.35rem; }
 }
 @media (max-width: 520px) {
   .wrap { padding: 0 16px; }
-  .nav { gap: 16px; }
+  .nav { gap: 13px; }
+  .nav a { font-size: 0.88rem; }
 }
 
 /* ============================================================
