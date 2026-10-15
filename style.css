@@ -5,15 +5,18 @@
    ============================================================ */
 
 :root {
-  --ink: #1b2233;          /* deep navy — text, dark sections */
-  --oxblood: #7a1f2b;      /* primary accent — links, buttons */
-  --oxblood-dark: #5e1621;
-  --gold: #b08d57;         /* fine rules, small details */
-  --slate: #8e9db5;        /* cool secondary, from the light installation */
-  --parchment: #f5f0e7;    /* page background */
-  --paper: #fbf8f2;        /* cards */
-  --muted: #5b6273;        /* secondary text */
-  --line: #e2d9c8;
+  /* Palette: teal, marigold, hibiscus pink, warm cream (henna & hibiscus) */
+  --ink: #0f4c4c;          /* deep teal — headings, dark sections */
+  --text: #2b1d14;         /* warm dark brown — body text */
+  --oxblood: #c2255c;      /* hibiscus pink — links, buttons, accents */
+  --oxblood-dark: #9c1a48;
+  --gold: #e8b23a;         /* marigold — rules and small details */
+  --marigold: #f6c453;
+  --slate: #25706f;        /* light teal — small labels */
+  --parchment: #fff7ec;    /* page background */
+  --paper: #fffcf6;        /* cards */
+  --muted: #6b5a4b;        /* secondary text */
+  --line: #f0dcc0;
 
   --serif: "Fraunces", Georgia, "Times New Roman", serif;
   --sans: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -29,7 +32,7 @@ html { scroll-behavior: smooth; }
 body {
   margin: 0;
   background: var(--parchment);
-  color: var(--ink);
+  color: var(--text);
   font-family: var(--sans);
   font-size: 1.0625rem;
   line-height: 1.65;
@@ -47,6 +50,7 @@ h1, h2, h3 {
   line-height: 1.1;
   letter-spacing: -0.01em;
   margin: 0 0 0.5em;
+  color: var(--ink);
 }
 h1 { font-size: clamp(2.8rem, 7vw, 5rem); }
 h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
@@ -127,11 +131,11 @@ h3 { font-size: 1.35rem; }
 }
 
 /* ---------- Highlights strip ---------- */
-.highlights { background: var(--ink); color: var(--parchment); padding: 56px 0; }
+.highlights { border-top: 6px solid var(--marigold); background: var(--ink); color: var(--parchment); padding: 56px 0; }
 .highlights .wrap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
-.stat { border-top: 1px solid var(--gold); padding-top: 18px; }
-.stat .num { font-family: var(--serif); font-size: 2.4rem; line-height: 1; color: #fff; }
-.stat p { margin: .6rem 0 0; color: #c9cfdb; font-size: 0.95rem; }
+.stat { border-top: 2px solid var(--marigold); padding-top: 18px; }
+.stat .num { font-family: var(--serif); font-size: 2.4rem; line-height: 1; color: var(--marigold); }
+.stat p { margin: .6rem 0 0; color: #cfe3df; font-size: 0.95rem; }
 
 /* ---------- Section ---------- */
 .section { padding: 88px 0; }
@@ -228,7 +232,7 @@ h3 { font-size: 1.35rem; }
 .work { break-inside: avoid; margin: 0 0 28px; }
 .work .frame {
   background: var(--paper); border: 1px solid var(--line); padding: 14px;
-  box-shadow: 0 1px 0 var(--line), 0 12px 30px -18px rgba(27, 34, 51, .35);
+  box-shadow: 0 1px 0 var(--line), 0 12px 30px -18px rgba(15, 76, 76, .30);
 }
 .work img { width: 100%; height: auto; }
 .work figcaption { padding-top: 12px; }
@@ -256,7 +260,7 @@ h3 { font-size: 1.35rem; }
   background: var(--ink); color: var(--parchment); border-radius: var(--radius);
   padding: 36px 32px;
 }
-.contact-card h2 { color: #fff; font-size: 1.6rem; }
+.contact-card h2 { color: var(--marigold); font-size: 1.6rem; }
 .contact-card dl { margin: 0; }
 .contact-card dt {
   font-size: 0.75rem; letter-spacing: .16em; text-transform: uppercase; color: var(--gold);
@@ -264,7 +268,7 @@ h3 { font-size: 1.35rem; }
 }
 .contact-card dd { margin: 6px 0 0; font-size: 1.05rem; overflow-wrap: anywhere; }
 .contact-card a { color: #fff; }
-.contact-card a:hover { color: #e9d9bb; }
+.contact-card a:hover { color: var(--marigold); }
 .topics { list-style: none; padding: 0; margin: 0; }
 .topics li { padding: 16px 0; border-top: 1px solid var(--line); }
 .topics li strong { display: block; font-family: var(--serif); font-weight: 500; font-size: 1.15rem; }
