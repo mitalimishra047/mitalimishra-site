@@ -1,0 +1,180 @@
+/* ============================================================
+   mitalimishra.com — shared stylesheet
+   Palette drawn from the portrait: oxblood jacket, navy scarf,
+   cool slate light, warm parchment, muted gold.
+   ============================================================ */
+
+:root {
+  --ink: #1b2233;          /* deep navy — text, dark sections */
+  --oxblood: #7a1f2b;      /* primary accent — links, buttons */
+  --oxblood-dark: #5e1621;
+  --gold: #b08d57;         /* fine rules, small details */
+  --slate: #8e9db5;        /* cool secondary, from the light installation */
+  --parchment: #f5f0e7;    /* page background */
+  --paper: #fbf8f2;        /* cards */
+  --muted: #5b6273;        /* secondary text */
+  --line: #e2d9c8;
+
+  --serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --sans: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --max: 1120px;
+  --radius: 6px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--parchment);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: var(--oxblood); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--oxblood-dark); }
+
+h1, h2, h3 {
+  font-family: var(--serif);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.5em;
+}
+h1 { font-size: clamp(2.8rem, 7vw, 5rem); }
+h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
+h3 { font-size: 1.35rem; }
+
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+.eyebrow {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--oxblood);
+  margin: 0 0 1rem;
+}
+
+/* ---------- Header / nav ---------- */
+.site-header {
+  border-bottom: 1px solid var(--line);
+  background: var(--parchment);
+  position: sticky; top: 0; z-index: 10;
+}
+.site-header .wrap {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; padding-top: 18px; padding-bottom: 18px; flex-wrap: wrap;
+}
+.logo {
+  font-family: var(--serif); font-size: 1.35rem; font-style: italic;
+  color: var(--ink); text-decoration: none;
+}
+.logo span { color: var(--oxblood); }
+.nav { display: flex; gap: 26px; flex-wrap: wrap; }
+.nav a {
+  color: var(--ink); text-decoration: none; font-size: 0.95rem;
+  padding-bottom: 3px; border-bottom: 1px solid transparent;
+}
+.nav a:hover, .nav a[aria-current="page"] { border-bottom-color: var(--oxblood); color: var(--oxblood); }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block; padding: 12px 22px; border-radius: var(--radius);
+  font-weight: 600; font-size: 0.95rem; text-decoration: none;
+  border: 1px solid var(--oxblood); transition: background .2s, color .2s;
+}
+.btn-primary { background: var(--oxblood); color: var(--paper); }
+.btn-primary:hover { background: var(--oxblood-dark); color: var(--paper); }
+.btn-ghost { color: var(--oxblood); background: transparent; }
+.btn-ghost:hover { background: var(--oxblood); color: var(--paper); }
+
+/* ---------- Hero ---------- */
+.hero { padding: 72px 0 88px; }
+.hero .wrap {
+  display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 64px; align-items: center;
+}
+.hero h1 em { color: var(--oxblood); font-style: italic; }
+.hero .roles {
+  font-family: var(--serif); font-style: italic; font-size: 1.3rem;
+  color: var(--muted); margin: 0 0 1.5rem;
+}
+.hero .roles b { color: var(--gold); font-weight: 400; padding: 0 .35em; }
+.hero p.lede { max-width: 34em; margin: 0 0 2rem; }
+.hero .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* arched portrait frame — a nod to both courthouse and gallery architecture */
+.portrait {
+  position: relative; justify-self: center; width: min(100%, 360px);
+}
+.portrait img {
+  width: 100%; aspect-ratio: 3 / 4.4; object-fit: cover; object-position: center 22%;
+  border-radius: 999px 999px var(--radius) var(--radius);
+}
+.portrait::after {
+  content: ""; position: absolute; inset: -14px -14px 14px 14px;
+  border: 1px solid var(--gold);
+  border-radius: 999px 999px var(--radius) var(--radius);
+  z-index: -1;
+}
+
+/* ---------- Highlights strip ---------- */
+.highlights { background: var(--ink); color: var(--parchment); padding: 56px 0; }
+.highlights .wrap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+.stat { border-top: 1px solid var(--gold); padding-top: 18px; }
+.stat .num { font-family: var(--serif); font-size: 2.4rem; line-height: 1; color: #fff; }
+.stat p { margin: .6rem 0 0; color: #c9cfdb; font-size: 0.95rem; }
+
+/* ---------- Section ---------- */
+.section { padding: 88px 0; }
+.section-head { max-width: 40em; margin-bottom: 44px; }
+
+/* ---------- Cards ---------- */
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.card {
+  background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 30px 28px; display: flex; flex-direction: column;
+}
+.card .tag {
+  font-size: 0.75rem; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--slate); font-weight: 600; margin-bottom: 14px;
+}
+.card p { color: var(--muted); margin: 0 0 1.4rem; flex: 1; }
+.card a { font-weight: 600; text-decoration: none; }
+.card a::after { content: " →"; }
+
+/* ---------- Quote band ---------- */
+.quote {
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  padding: 72px 0; text-align: center;
+}
+.quote blockquote {
+  font-family: var(--serif); font-style: italic; font-size: clamp(1.4rem, 3vw, 2rem);
+  max-width: 28em; margin: 0 auto; line-height: 1.35;
+}
+
+/* ---------- Footer ---------- */
+.site-footer { padding: 40px 0; color: var(--muted); font-size: 0.9rem; }
+.site-footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.site-footer a { color: var(--muted); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 860px) {
+  .hero { padding: 48px 0 64px; }
+  .hero .wrap { grid-template-columns: 1fr; gap: 48px; }
+  .portrait { order: -1; width: min(80%, 300px); }
+  .highlights .wrap, .cards { grid-template-columns: 1fr; }
+  .section { padding: 64px 0; }
+}
+@media (max-width: 520px) {
+  .wrap { padding: 0 16px; }
+  .nav { gap: 16px; }
+}
