@@ -276,3 +276,4 @@ h3 { font-size: 1.35rem; }
   .entry { grid-template-columns: 1fr; gap: 6px; }
   .page-head { padding: 48px 0 32px; }
 }
+.work a.frame { display: block; }
