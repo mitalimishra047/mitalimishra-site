@@ -302,3 +302,9 @@ h3 { font-size: 1.35rem; }
   .film-grid { grid-template-columns: 1fr; gap: 28px; }
 }
 .film-links { display: flex; flex-wrap: wrap; gap: 24px; }
+
+/* ---------- Films page: festival laurels ---------- */
+.laurels-title { color: var(--marigold); font-size: 1.4rem; margin: 64px 0 24px; padding-top: 40px; border-top: 1px solid rgba(246,196,83,.35); }
+.laurels { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px 32px; align-items: center; }
+.laurels img { width: 100%; height: auto; }
+@media (max-width: 860px) { .laurels { grid-template-columns: repeat(2, 1fr); gap: 20px; } .laurels-title { margin-top: 40px; } }
