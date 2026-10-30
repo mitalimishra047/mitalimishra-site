@@ -13,13 +13,13 @@
   --gold: #e8b23a;         /* marigold — rules and small details */
   --marigold: #f6c453;
   --slate: #25706f;        /* light teal — small labels */
-  --parchment: #fff7ec;    /* page background */
-  --paper: #fffcf6;        /* cards */
+  --parchment: #eaf4fb;    /* page background — light blue */
+  --paper: #f6fafd;        /* cards */
   --muted: #6b5a4b;        /* secondary text */
-  --line: #f0dcc0;
+  --line: #c9dff0;
 
-  --serif: "Fraunces", Georgia, "Times New Roman", serif;
-  --sans: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --serif: "Times New Roman", Times, serif;
+  --sans: "Times New Roman", Times, serif;
 
   --max: 1120px;
   --radius: 6px;
@@ -34,7 +34,7 @@ body {
   background: var(--parchment);
   color: var(--text);
   font-family: var(--sans);
-  font-size: 1.0625rem;
+  font-size: 1.125rem;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
